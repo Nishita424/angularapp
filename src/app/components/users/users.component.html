@@ -12,8 +12,15 @@
     *ngFor="let user of users"
     [class.bg-light]="user.isActive"
   >
-    <h3>{{ user.fName }} {{ user.lName }}</h3>
-    <ul class="list-group" *ngIf="showExtended && user.age && user.address">
+    <h3>
+      {{ user.fName }} {{ user.lName }}
+      <small
+        ><button (click)="toggleHide(user)" class="btn btn-dark btn-sm">
+          <i [ngClass]="user.hide ? 'fa fa-plus' : 'fa fa-minus'"></i></button
+      ></small>
+    </h3>
+
+    <ul class="list-group" *ngIf="!user.hide && user.age && user.address">
       <li class="list-group-item">Age: {{ user.age }}</li>
       <li class="list-group-item">
         Address:
