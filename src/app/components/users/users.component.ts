@@ -7,9 +7,19 @@ import { User } from '../../models/user';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    fName: '',
+    lName: '',
+    age: null,
+    address: {
+      street: '',
+      state: '',
+      city: '',
+    },
+  };
   users: User[];
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
   isActive: boolean;
   showExtended: boolean = true;
   showUserForm: boolean = false;
@@ -74,7 +84,23 @@ export class UsersComponent implements OnInit {
     this.loaded = true;
   }
   addUser(user: User) {
-    this.users.push(user);
+    this.user.isActive = true;
+    this.user.registered = new Date();
+
+    // Adding new user to first
+    this.users.unshift(this.user);
+
+    // Clearing form
+    this.user = {
+      fName: '',
+      lName: '',
+      age: null,
+      address: {
+        street: '',
+        state: '',
+        city: '',
+      },
+    };
   }
   fireEvent(e) {
     console.log(e.type);
