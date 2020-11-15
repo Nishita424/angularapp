@@ -18,6 +18,7 @@
           'is-invalid': userFirstName.errors && userFirstName.touched
         }"
       />
+      <!-- For invalid message css, conditions above ngClass is for box css-->
       <div [hidden]="!userFirstName.errors?.required" class="invalid-feedback">
         First name required
       </div>

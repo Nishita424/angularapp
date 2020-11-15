@@ -86,7 +86,7 @@ export class UsersComponent implements OnInit {
     user.hide = !user.hide;
   }
 
-  // Form submission
+  // Form submission: onSubmit userForm is an object with two keys: value(new obj), valid(t/f)
   onSubmit({ value, valid }: { value: User; valid: boolean }) {
     if (!valid) {
       console.log('Form is not valid');
