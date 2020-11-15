@@ -28,6 +28,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getUsers().subscribe((users) => (this.users = users));
     this.loaded = true;
+
+    // this.dataService.getData().subscribe((data) => console.log(data));
   }
   /*
   addUser() {
