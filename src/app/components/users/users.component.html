@@ -14,7 +14,7 @@
   >
     <h3>
       {{ user.fName }} {{ user.lName }}
-      <small
+      <small *ngIf="user.age && user.address"
         ><button (click)="toggleHide(user)" class="btn btn-dark btn-sm">
           <i [ngClass]="user.hide ? 'fa fa-plus' : 'fa fa-minus'"></i></button
       ></small>
