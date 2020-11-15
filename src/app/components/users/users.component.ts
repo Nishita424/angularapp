@@ -10,12 +10,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     fName: '',
     lName: '',
-    age: null,
-    address: {
-      street: '',
-      state: '',
-      city: '',
-    },
+    email: '',
   };
   users: User[];
   loaded: boolean = false;
@@ -31,12 +26,7 @@ export class UsersComponent implements OnInit {
       {
         fName: 'John',
         lName: 'Doe',
-        age: 30,
-        address: {
-          street: 'Mavaldo street',
-          city: 'Vizag',
-          state: 'AP',
-        },
+        email: 'john@yahoo.com',
         isActive: true,
         registered: new Date('02/01/2020 09:30:00'),
         hide: true,
@@ -44,12 +34,7 @@ export class UsersComponent implements OnInit {
       {
         fName: 'Jake',
         lName: 'Doe',
-        age: 30,
-        address: {
-          street: 'Milika resort',
-          city: 'Vizag',
-          state: 'AP',
-        },
+        email: 'jake@yahoo.com',
         isActive: false,
         registered: new Date('11/01/2020 18:30:00'),
         hide: true,
@@ -57,12 +42,7 @@ export class UsersComponent implements OnInit {
       {
         fName: 'Joey',
         lName: 'Doe',
-        age: 30,
-        address: {
-          street: 'Dorry park',
-          city: 'Vizag',
-          state: 'AP',
-        },
+        email: 'joey@yahoo.com',
         isActive: true,
         registered: new Date('12/01/2020 10:30:00'),
         hide: true,
@@ -70,12 +50,7 @@ export class UsersComponent implements OnInit {
       {
         fName: 'Rachel',
         lName: 'Doe',
-        age: 30,
-        address: {
-          street: 'Lara clave',
-          city: 'Vizag',
-          state: 'AP',
-        },
+        email: 'rachel@yahoo.com',
         isActive: false,
         registered: new Date('01/04/2020 09:30:00'),
         hide: true,
@@ -83,7 +58,8 @@ export class UsersComponent implements OnInit {
     ];
     this.loaded = true;
   }
-  addUser(user: User) {
+  /*
+  addUser() {
     this.user.isActive = true;
     this.user.registered = new Date();
 
@@ -94,21 +70,18 @@ export class UsersComponent implements OnInit {
     this.user = {
       fName: '',
       lName: '',
-      age: null,
-      address: {
-        street: '',
-        state: '',
-        city: '',
-      },
+      email: '',
     };
   }
-  fireEvent(e) {
-    console.log(e.type);
-    console.log(e.target.value);
-  }
-  toggleHide(user) {
-    user.hide = !user.hide;
-  }
+  */
+  // fireEvent(e) {
+  //   console.log(e.type);
+  //   console.log(e.target.value);
+  // }
+
+  // toggleHide(user) {
+  //   user.hide = !user.hide;
+  // }
   onSubmit(e) {
     console.log(123);
 
