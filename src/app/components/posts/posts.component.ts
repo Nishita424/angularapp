@@ -50,4 +50,16 @@ export class PostsComponent implements OnInit {
       }
     });
   }
+
+  deletePost(post: Post) {
+    if (confirm('Are you sure ?')) {
+      this.postService.deletePost(post.id).subscribe(() => {
+        this.posts.forEach((curr, index) => {
+          if (curr.id === post.id) {
+            this.posts.splice(index, 1);
+          }
+        });
+      });
+    }
+  }
 }
