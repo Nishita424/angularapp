@@ -14,6 +14,7 @@ export class PostsComponent implements OnInit {
     title: '',
     body: '',
   };
+  isEdit: boolean = false;
 
   constructor(private postService: PostService) {}
 
@@ -30,5 +31,6 @@ export class PostsComponent implements OnInit {
 
   editPost(post: Post) {
     this.currentPost = post;
+    this.isEdit = true;
   }
 }
