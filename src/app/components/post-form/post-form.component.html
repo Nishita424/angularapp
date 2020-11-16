@@ -1,0 +1,19 @@
+<h2>Add Post</h2>
+<div class="card card-body mb-3">
+  <form>
+    <div class="form-group">
+      <label>Title</label>
+      <input #title type="text" class="form-control" name="title" />
+    </div>
+    <div class="form-group">
+      <label>Body</label>
+      <input #body type="text" class="form-control" name="body" />
+    </div>
+    <button
+      (click)="addPost(title.value, body.value)"
+      class="btn btn-dark btn-block"
+    >
+      Add Post
+    </button>
+  </form>
+</div>
